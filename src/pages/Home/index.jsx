@@ -1,4 +1,3 @@
-// src/page/Home.jsx
 import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { PokemonList } from "../../components/PokemonList";
@@ -12,7 +11,7 @@ const Home = () => {
     (state) => state.data.searchQuery,
     shallowEqual
   );
-  const loading = useSelector((state) => state.ui.loading);
+  // const loading = useSelector((state) => state.ui.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +25,8 @@ const Home = () => {
   return (
     <div className="container">
       <Header />
-      {loading ? <p>Loading</p> : <PokemonList pokemons={filteredPokemons} />}
+      {/* {loading ? <p>Loading</p> : <PokemonList pokemons={filteredPokemons} />} */}
+      <PokemonList pokemons={filteredPokemons} />
     </div>
   );
 };
